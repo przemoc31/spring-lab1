@@ -76,9 +76,18 @@ public class CommandLine implements CommandLineRunner
 
     public void addElement()
     {
+<<<<<<< HEAD
         System.out.println("What is the type of object you want to add?");
         System.out.println("1." + departmentService.findAll().get(0).getClass().toString());
         System.out.println("2." + doctorService.findAll().get(0).getClass().toString());
+=======
+        String departmentClassName = departmentService.findAll().get(0).getClass().getName();
+        String doctorClassName = doctorService.findAll().get(0).getClass().getName();
+        int pointToTrim = departmentClassName.lastIndexOf ('.') + 1;
+        System.out.println("What is the type of object you want to add?");
+        System.out.println("1." + departmentClassName.substring(pointToTrim));
+        System.out.println("2." + doctorClassName.substring(pointToTrim));
+>>>>>>> f9e8af5 (First Commit)
         Scanner scanner = new Scanner(System.in);
         int input = scanner.nextInt();
 
@@ -126,9 +135,18 @@ public class CommandLine implements CommandLineRunner
 
     public void deleteElement()
     {
+<<<<<<< HEAD
         System.out.println("What is the type of object you want to delete?");
         System.out.println("1." + departmentService.findAll().get(0).getClass().toString());
         System.out.println("2." + doctorService.findAll().get(0).getClass().toString());
+=======
+        String departmentClassName = departmentService.findAll().get(0).getClass().getName();
+        String doctorClassName = doctorService.findAll().get(0).getClass().getName();
+        int pointToTrim = departmentClassName.lastIndexOf ('.') + 1;
+        System.out.println("What is the type of object you want to delete?");
+        System.out.println("1." + departmentClassName.substring(pointToTrim));
+        System.out.println("2." + doctorClassName.substring(pointToTrim));
+>>>>>>> f9e8af5 (First Commit)
         Scanner scanner = new Scanner(System.in);
         int input = scanner.nextInt();
 
