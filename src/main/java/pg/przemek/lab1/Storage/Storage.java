@@ -30,10 +30,6 @@ public class Storage {
         return departments.stream().filter(department -> department.getName().equals(name))
                 .findFirst()
                 .map(department -> new Department(department));
-<<<<<<< HEAD
-=======
-
->>>>>>> f9e8af5 (First Commit)
     }
 
     public List<Department> findAllDepartments()
