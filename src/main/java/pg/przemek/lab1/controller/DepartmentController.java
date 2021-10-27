@@ -6,6 +6,7 @@ import org.springframework.web.bind.annotation.*;
 import org.springframework.web.util.UriComponentsBuilder;
 import pg.przemek.lab1.dto.*;
 import pg.przemek.lab1.entity.Department;
+import pg.przemek.lab1.entity.Doctor;
 import pg.przemek.lab1.service.DepartmentService;
 import pg.przemek.lab1.service.DoctorService;
 
@@ -49,11 +50,20 @@ public class DepartmentController
     @PostMapping
     public ResponseEntity<CreateDepartmentRequest> createDepartment(@RequestBody CreateDepartmentRequest createDepartmentRequest, UriComponentsBuilder uriComponentsBuilder)
     {
-        Department department = CreateDepartmentRequest
-                .dtoToEntityMapper(null)
-                .apply(createDepartmentRequest);
-        department = departmentService.save(department);
-        return ResponseEntity.created(uriComponentsBuilder.pathSegment("api", "departments", "{name}").buildAndExpand(department.getName()).toUri()).build();
+        Optional<Department> optionalDepartment = departmentService.find(createDepartmentRequest.getName());
+        if (optionalDepartment.isEmpty())
+        {
+            Department department = CreateDepartmentRequest
+                    .dtoToEntityMapper(null)
+                    .apply(createDepartmentRequest);
+            department = departmentService.save(department);
+            return ResponseEntity.created(uriComponentsBuilder.pathSegment("api", "departments", "{id}").buildAndExpand(department.getName()).toUri()).build();
+        }
+        else
+        {
+            // Already Exists Error
+            return ResponseEntity.status(403).build();
+        }
     }
 
     @DeleteMapping("{name}")
