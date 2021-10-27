@@ -2,18 +2,28 @@ package pg.przemek.lab1.entity;
 
 import lombok.*;
 
+import javax.persistence.*;
+
 @Getter
 @Setter
 @NoArgsConstructor
 @AllArgsConstructor
-@ToString
-@EqualsAndHashCode
 @Builder
-public class Doctor {
-    /* primary key */
-    private int id;
+@Entity
+@Table(name = "doctors")
+public class Doctor
+{
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
+    private Long id;
+
     private String name;
+
     private String surname;
+
+    @ManyToOne
+    @JoinColumn(name = "department")
     private Department department;
 
     public Doctor(Doctor newDoctor)

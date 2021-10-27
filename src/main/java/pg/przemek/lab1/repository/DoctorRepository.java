@@ -1,34 +1,27 @@
 package pg.przemek.lab1.repository;
 
-import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
-import pg.przemek.lab1.Storage.Storage;
 import pg.przemek.lab1.entity.Doctor;
 
 import java.util.List;
 import java.util.Optional;
 
 @Repository
-public class DoctorRepository
+public interface DoctorRepository extends JpaRepository<Doctor, Long>
 {
-    private Storage storage;
 
-    @Autowired
-    public DoctorRepository(Storage storage)
-    {
-        this.storage = storage;
-    }
+    @Override
+    Optional<Doctor> findById(Long id);
 
-    public Optional<Doctor> find(int id)
-    {
-        return this.storage.findDoctor(id);
-    }
+    @Override
+    List<Doctor> findAll();
 
-    public List<Doctor> findAll() {
-        return storage.findAllDoctors();
-    }
+    @Override
+    Doctor save(Doctor entity);
 
-    public void save(Doctor entity) { storage.saveDoctor(entity); }
+    @Override
+    void deleteById(Long id);
 
-    public void delete(Doctor entity) { storage.deleteDoctor(entity.getId()); }
+
 }

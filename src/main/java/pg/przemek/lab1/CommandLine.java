@@ -7,13 +7,12 @@ import pg.przemek.lab1.entity.Department;
 import pg.przemek.lab1.entity.Doctor;
 import pg.przemek.lab1.service.DepartmentService;
 import pg.przemek.lab1.service.DoctorService;
-
-import java.util.Optional;
 import java.util.Scanner;
 
 @Component
 public class CommandLine implements CommandLineRunner
 {
+
     private DepartmentService departmentService;
     private DoctorService doctorService;
 
@@ -106,7 +105,7 @@ public class CommandLine implements CommandLineRunner
         int numberOfBeds = scanner.nextInt();
         System.out.println("Type number of rooms:");
         int numberOfRooms = scanner.nextInt();
-        Department newDepartment = new Department(name, numberOfBeds, numberOfRooms);
+        Department newDepartment = new Department(name, numberOfBeds, numberOfRooms, null);
         departmentService.save(newDepartment);
     }
 
@@ -114,7 +113,7 @@ public class CommandLine implements CommandLineRunner
     {
         Scanner scanner = new Scanner(System.in);
         System.out.println("Type id:");
-        int id = scanner.nextInt();
+        Long id = scanner.nextLong();
         scanner.nextLine();
         System.out.println("Type name:");
         String name = scanner.nextLine();
@@ -162,7 +161,7 @@ public class CommandLine implements CommandLineRunner
     {
         Scanner scanner = new Scanner(System.in);
         System.out.println("Type id of doctor you want to delete:");
-        int id = scanner.nextInt();
+        Long id = scanner.nextLong();
         doctorService.delete(id);
     }
 }

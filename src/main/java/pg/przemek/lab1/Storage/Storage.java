@@ -62,23 +62,23 @@ public class Storage {
         doctors.add(newDoctor);
     }
 
-    public Optional<Doctor> findDoctor(int id)
+    public Optional<Doctor> findDoctor(Long id)
     {
-        return doctors.stream().filter(engine -> engine.getId() == id)
+        return doctors.stream().filter(engine -> engine.getId().equals(id))
                 .findFirst()
                 .map(doctor -> new Doctor(doctor));
     }
 
     public List<Doctor> findAllDoctors()
     {
-        return new ArrayList<Doctor>(doctors);
+        return new ArrayList<>(doctors);
     }
 
-    public synchronized void deleteDoctor(int id) throws IllegalArgumentException
+    public synchronized void deleteDoctor(Long id) throws IllegalArgumentException
     {
         for (Doctor doctor : doctors)
         {
-            if (doctor.getId() == id)
+            if (doctor.getId().equals(id))
             {
                 doctors.remove(doctor);
                 return;

@@ -8,10 +8,15 @@ import pg.przemek.lab1.service.DepartmentService;
 import pg.przemek.lab1.service.DoctorService;
 
 import javax.annotation.PostConstruct;
+import java.sql.SQLOutput;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Optional;
 
 @Component
 public class Initializer
 {
+
     private final DepartmentService departmentService;
     private final DoctorService doctorService;
 
@@ -48,21 +53,18 @@ public class Initializer
         departmentService.save(surgery);
 
         Doctor watson = Doctor.builder()
-                .id(1156)
                 .name("John")
                 .surname("Watson")
                 .department(neurology)
                 .build();
 
         Doctor house = Doctor.builder()
-                .id(888)
                 .name("Gregory")
                 .surname("House")
                 .department(cardiology)
                 .build();
 
         Doctor murphy = Doctor.builder()
-                .id(1723)
                 .name("Shaun")
                 .surname("Murphy")
                 .department(surgery)
@@ -71,5 +73,18 @@ public class Initializer
         doctorService.save(watson);
         doctorService.save(house);
         doctorService.save(murphy);
+
+        /*//cardiology.getDoctors().add(house)
+        Optional<Department> jd = departmentService.find(cardiology.getName());
+        Optional<Doctor> doc = doctorService.find(house.getId());
+        if (doc.isPresent())
+        {
+            System.out.println(doc.get().getDepartment().getName());
+        }
+        if (jd.isPresent())
+        {
+
+            System.out.println(jd.get().getDoctors());
+        }*/
     }
 }
