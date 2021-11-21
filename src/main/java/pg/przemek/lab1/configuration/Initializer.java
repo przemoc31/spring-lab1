@@ -74,7 +74,8 @@ public class Initializer
         doctorService.save(house);
         doctorService.save(murphy);
 
-        /*//cardiology.getDoctors().add(house)
+        //surgery.getDoctors().add(house);
+        /*//
         Optional<Department> jd = departmentService.find(cardiology.getName());
         Optional<Doctor> doc = doctorService.find(house.getId());
         if (doc.isPresent())

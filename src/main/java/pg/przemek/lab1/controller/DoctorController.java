@@ -97,7 +97,6 @@ public class DoctorController
             return ResponseEntity.accepted().build();
         }
 
-
     }
 
 }

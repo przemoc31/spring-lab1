@@ -25,7 +25,7 @@ public class Department
     @Column(name = "number_of_rooms")
     private int numberOfRooms;
 
-    @OneToMany(mappedBy = "department", cascade = CascadeType.ALL, fetch = FetchType.EAGER)
+    @OneToMany(mappedBy = "department", cascade = CascadeType.REMOVE, fetch = FetchType.EAGER)
     private List<Doctor> doctors = new ArrayList<>();
 
     public Department(Department newDepartment)

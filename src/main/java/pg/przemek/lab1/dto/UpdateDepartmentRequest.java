@@ -17,15 +17,12 @@ public class UpdateDepartmentRequest
 
     private int numberOfRooms;
 
-    //private List<Doctor> doctors;
-
     public static BiFunction<Department, UpdateDepartmentRequest, Department> dtoToEntityUpdater()
     {
         return (department, updateDepartmentRequest) ->
         {
             department.setNumberOfBeds(updateDepartmentRequest.getNumberOfBeds());
             department.setNumberOfRooms(updateDepartmentRequest.getNumberOfRooms());
-            //department.setDoctors(updateDepartmentRequest.getDoctors());
             return department;
         };
     }

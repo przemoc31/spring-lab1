@@ -2,6 +2,7 @@ package pg.przemek.lab1.service;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 import pg.przemek.lab1.entity.Doctor;
 import pg.przemek.lab1.repository.DoctorRepository;
 
@@ -23,9 +24,12 @@ public class DoctorService
 
     public List<Doctor> findAll() { return doctorRepository.findAll(); }
 
+    @Transactional
     public Doctor save(Doctor doctor) { return doctorRepository.save(doctor); }
 
+    @Transactional
     public void delete(Long id) { doctorRepository.deleteById(id); }
 
+    @Transactional
     public void update(Doctor doctor) { doctorRepository.save(doctor); }
 }

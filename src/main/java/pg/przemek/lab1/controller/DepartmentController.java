@@ -18,13 +18,10 @@ public class DepartmentController
 {
     private DepartmentService departmentService;
 
-    private DoctorService doctorService;
-
     @Autowired
-    public DepartmentController(DepartmentService departmentService, DoctorService doctorService)
+    public DepartmentController(DepartmentService departmentService)
     {
         this.departmentService = departmentService;
-        this.doctorService = doctorService;
     }
 
     @GetMapping

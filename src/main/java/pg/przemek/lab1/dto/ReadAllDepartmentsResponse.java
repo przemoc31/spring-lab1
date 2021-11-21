@@ -1,6 +1,8 @@
 package pg.przemek.lab1.dto;
 
 import lombok.*;
+import pg.przemek.lab1.entity.Doctor;
+
 import java.util.Collection;
 import java.util.List;
 import java.util.function.Function;

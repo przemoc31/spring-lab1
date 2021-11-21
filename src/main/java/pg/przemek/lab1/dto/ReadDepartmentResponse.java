@@ -1,13 +1,16 @@
 package pg.przemek.lab1.dto;
 
-import lombok.Builder;
-import lombok.Getter;
-import lombok.Setter;
+import com.fasterxml.jackson.annotation.*;
+import com.fasterxml.jackson.databind.annotation.JsonSerialize;
+import lombok.*;
+import lombok.extern.jackson.Jacksonized;
 import pg.przemek.lab1.entity.Department;
 import pg.przemek.lab1.entity.Doctor;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.function.Function;
+import java.util.stream.Collectors;
 
 @Getter
 @Setter
@@ -21,7 +24,7 @@ public class ReadDepartmentResponse
 
     private int numberOfRooms;
 
-    //private List<Doctor> doctors;
+    private List<String> doctors;
 
     public static Function<Department, ReadDepartmentResponse> entityToDtoMapper()
     {
@@ -29,7 +32,7 @@ public class ReadDepartmentResponse
                 .name(department.getName())
                 .numberOfBeds(department.getNumberOfBeds())
                 .numberOfRooms(department.getNumberOfRooms())
-                //.doctors(department.getDoctors())
+                .doctors(department.getDoctors().stream().map(element -> "id: " + element.getId() + ", name: " + element.getName() + ", surname: " + element.getSurname()).collect(Collectors.toList()))
                 .build();
     }
 }
