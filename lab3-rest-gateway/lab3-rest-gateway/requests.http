@@ -1,0 +1,154 @@
+GET http://localhost:8080/api/departments/Cardiology
+Accept: application/json
+
+###
+
+GET http://localhost:8080/api/doctors
+Accept: application/json
+
+###
+
+GET http://localhost:8080/api/departments
+Accept: application/json
+
+###
+
+POST http://localhost:8080/api/doctors
+Content-Type: application/json
+
+{
+  "name": "Adam",
+  "surname": "Rektor",
+  "department": "Cardiology"
+}
+
+
+###
+
+POST http://localhost:8080/api/doctors
+Content-Type: application/json
+
+{
+  "name": "Jaś",
+  "surname": "Kapela",
+  "department": "Patologia"
+}
+
+
+###
+
+POST http://localhost:8080/api/doctors
+Content-Type: application/json
+
+{
+  "name": "Norbert",
+  "surname": "Gierczak",
+  "department": "Surgery"
+}
+
+
+###
+
+GET http://localhost:8080/api/doctors/1
+Accept: application/json
+
+###
+
+GET http://localhost:8080/api/doctors/4
+Accept: application/json
+
+###
+
+POST http://localhost:8080/api/departments
+Content-Type: application/json
+
+{
+  "name": "Psychiatryczny",
+  "numberOfBeds": 90,
+  "numberOfRooms": 10
+}
+
+###
+
+POST http://localhost:8080/api/doctors
+Content-Type: application/json
+
+{
+  "name": "Hannibal",
+  "surname": "Lecter",
+  "department": "Psychiatryczny"
+}
+
+###
+
+GET http://localhost:8080/api/departments/Surgery
+Accept: application/json
+
+###
+
+GET http://localhost:8080/api/departments/Cardiology
+Accept: application/json
+
+###
+
+GET http://localhost:8080/api/departments/Psychiatryczny
+Accept: application/json
+
+###
+
+DELETE http://localhost:8080/api/doctors/3
+
+###
+
+GET http://localhost:8080/api/doctors/3
+Accept: application/json
+
+###
+
+DELETE http://localhost:8080/api/departments/Surgery
+
+###
+
+DELETE http://localhost:8080/api/departments/Cardiology
+
+###
+
+PUT http://localhost:8080/api/doctors/4
+Content-Type: application/json
+
+{
+  "name": "Marcin",
+  "surname": "Wiraszko"
+}
+
+###
+
+PUT http://localhost:8080/api/departments/Psychiatryczny
+Content-Type: application/json
+
+{
+  "numberOfBeds": 150,
+  "numberOfRooms": 25
+}
+
+###
+
+GET http://localhost:8080/api/departments/Cardiology/doctors
+Accept: application/json
+
+###
+
+
+GET http://localhost:8080/api/departments/Neurology/doctors
+
+###
+GET http://localhost:8080/api/departments/Neurology/doctors/1
+
+###
+
+GET http://localhost:8080/api/departments/Psychiatryczny/doctors
+
+###
+GET http://localhost:8080/api/departments/Psychiatryczny/doctors/7
+
+###
