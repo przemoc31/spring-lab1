@@ -39,7 +39,7 @@ public class Lab1Application
 				.build();
 	}
 
-	/*@Bean
+	@Bean
 	public CorsWebFilter corsWebFilter() {
 
 		final CorsConfiguration corsConfig = new CorsConfiguration();
@@ -52,7 +52,7 @@ public class Lab1Application
 		source.registerCorsConfiguration("/**", corsConfig);
 
 		return new CorsWebFilter(source);
-	}*/
+	}
 
 
 }
