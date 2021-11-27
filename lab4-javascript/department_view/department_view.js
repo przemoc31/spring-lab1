@@ -10,6 +10,9 @@ import {
 
 window.addEventListener('load', () =>
 {
+    let addButton = document.getElementById("addButton");
+    addButton.href = '../doctor_add/doctor_add.html?department=' + getParamByName('department');
+
     getAndDisplayDepartment();
     getAndDisplayDoctors();
 })
@@ -44,14 +47,22 @@ function createRowInTable(doctor) {
     rowElement.appendChild(createLinkCell('edit', '../doctor_edit/doctor_edit.html?department='
         + getParamByName('department') + '&doctor=' + doctor.id));
     rowElement.appendChild(createButtonCell('delete', () => deleteDoctor(doctor.id)));
+
     return rowElement;
 }
 
 function displayDoctors(doctors)
 {
-    let tableBody = document.getElementById("tableBody");
-    deleteElementChildren(tableBody);
-    doctors.doctors.forEach(doctor => { tableBody.appendChild(createRowInTable(doctor)) })
+    if(Object.keys(doctors.doctors).length > 0)
+    {
+        let tableBody = document.getElementById("tableBody");
+        deleteElementChildren(tableBody);
+        doctors.doctors.forEach(doctor => { tableBody.appendChild(createRowInTable(doctor)) })
+    }
+    else
+    {
+
+    }
 }
 
 function getAndDisplayDoctors() {
@@ -79,4 +90,6 @@ function deleteDoctor(doctorId)
     httpRequest.open("DELETE", getGatewayUrl() + "/api/departments/" + getParamByName("department")
         + "/doctors/" + doctorId, true);
     httpRequest.send();
+
+    window.location.href = '../department_view/department_view.html?department=' + getParamByName('department');
 }

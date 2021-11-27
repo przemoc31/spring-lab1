@@ -1,6 +1,22 @@
 body {
     background-color: #96C4D8;
     font-family: Georgia serif;
+    background-image: url("images/backgroundImage.jpg");
+    /*background-color: #393939;
+    /* Full height */
+    height: 100%;
+
+    /* Center and scale the image nicely */
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+img {
+    height: 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
 }
 
 .container {
@@ -15,38 +31,60 @@ body {
     font-weight: bold;
 }
 
-.header h1 {
-    margin: 0;
-    padding: 10px;
-    font-style: italic;
+.header {
+    padding: 60px;
+    text-align: center;
+    background: #FFB266;
+    color: black;
+    font-size: 30px;
 }
 
-.navigation-bar {
-    background-color: #548BA1;
+a:link:not(.navigation-bar a, #addButton), a:visited {
+    display: inline-block;
+    padding: 15px 25px;
+    font-size: 14px;
+    cursor: pointer;
+    text-align: center;
+    text-decoration: none;
+    outline: none;
+    color: #fff;
+    background-color: #FFB266;
+    border: none;
+    border-radius: 15px;
+    box-shadow: 0 9px #999;
+}
+
+a:hover, a:active {
+    background-color: #ff9833;
+    color: white;
 }
 
 .navigation-bar ul {
-    display: flex;
     list-style-type: none;
     margin: 0;
     padding: 0;
+    overflow: hidden;
+    background-color: #333;
 }
 
 .navigation-bar li {
-    display: inline-block;
+    float: left;
 }
 
 .navigation-bar a {
-    display: inline-block;
-    padding: 5px 10px;
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
     text-decoration: none;
-    color: #214753;
-    font-weight: bold;
 }
 
 .navigation-bar a:hover {
-    background-color: #214753;
-    color: #548BA1;
+    background-color: #111;
+}
+
+.navigation-bar a:active {
+    background-color: #111;
 }
 
 .main-section {
@@ -54,13 +92,11 @@ body {
     background-color: #E0EEF7;
 }
 
-.footer {
-    font-size: small;
+footer {
     text-align: center;
-}
-
-.footer p {
-    margin: 0;
+    padding: 3px;
+    background-color: #FFB266;
+    color: white;
 }
 
 .text--justified {
@@ -75,23 +111,27 @@ body {
     font-weight: bold;
 }
 
-.ui-control {
-    border-color: #214753;
-    background-color: #E0EEF7;
-    border-width: 1px;
-    padding: 1px;
-    font-family: Georgia, serif;
-    font-size: 16px;
-}
-
-.ui-control:focus {
-    outline: none;
-}
-
 .ui-button {
-    height: 24px;
-    padding-left: 2px;
-    padding-right: 2px;
+    display: inline-block;
+    padding: 15px 25px;
+    font-size: 14px;
+    cursor: pointer;
+    text-align: center;
+    text-decoration: none;
+    outline: none;
+    color: #fff;
+    background-color: #FFB266;
+    border: none;
+    border-radius: 15px;
+    box-shadow: 0 9px #999;
+}
+
+.ui-button:hover {background-color: #ff9833}
+
+.ui-button:active {
+    background-color: #FFB266;
+    box-shadow: 0 5px #666;
+    transform: translateY(4px);
 }
 
 .ui-input {
@@ -106,20 +146,65 @@ body {
     display: none;
 }
 
-.data-table {
+table {
     border-collapse: collapse;
+    width: 100%;
 }
 
-.data-table td, .data-table th {
-    padding: 6px;
+th, td {
+    text-align: left;
+    padding: 8px;
 }
 
-.data-table thead {
-    font-weight: bold;
-    background-color: #548BA1;
-    color: #214753;
+tr:nth-child(even){background-color: #f2f2f2}
+
+th {
+    background-color: #FFB266;
+    color: white;
 }
 
-.data-table tbody tr:hover {
-    background-color: #96C4D8;
+button {
+    display: inline-block;
+    padding: 15px 25px;
+    font-size: 14px;
+    cursor: pointer;
+    text-align: center;
+    text-decoration: none;
+    outline: none;
+    color: #fff;
+    background-color: #FFB266;
+    border: none;
+    border-radius: 15px;
+    box-shadow: 0 9px #999;
+}
+
+button:hover {background-color: #ff9833}
+
+button:active {
+    background-color: #FFB266;
+    box-shadow: 0 5px #666;
+    transform: translateY(4px);
+}
+
+.add-button {
+    display: inline-block;
+    padding: 15px 25px;
+    font-size: 14px;
+    cursor: pointer;
+    text-align: center;
+    text-decoration: none;
+    outline: none;
+    color: #fff;
+    background-color: #FFB266;
+    border: none;
+    border-radius: 15px;
+    box-shadow: 0 9px #999;
+}
+
+.add-button:hover {background-color: #ff9833}
+
+.add-button:active {
+    background-color: #FFB266;
+    box-shadow: 0 5px #666;
+    transform: translateY(4px);
 }

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8"/>
+    <title>Department and Doctors</title>
+    <link rel="stylesheet" href="/../style.css"/>
+    <link rel="stylesheet" href="department_add.css"/>
+    <script src="../script.js" defer="defer"></script>
+    <script type="module" src="department_add.js" defer="defer"></script>
+</head>
+<body>
+<div class="container">
+    <header class="header">
+        <h1>Department and Doctors</h1>
+    </header>
+
+    <nav class="navigation-bar">
+        <ul>
+            <li><a href="/../index.html">Home Page</a></li>
+            <li><a href="/../department_list/department_list.html">Departments</a></li>
+        </ul>
+    </nav>
+
+    <section class="main-section">
+        <article class="text--justified">
+            <header><h2>Add new department</h2></header>
+            <form class="department__form" id="infoForm">
+                <label for="name">name:</label>
+                <input class="ui-control ui-input" id="name" name="name"/>
+                <label for="numberOfBeds">number of beds:</label>
+                <input class="ui-control ui-input" id="numberOfBeds" name="numberOfBeds"/>
+                <label for="numberOfRooms">number of rooms:</label>
+                <input class="ui-control ui-input" id="numberOfRooms" name="numberOfRooms"/>
+                <input class="ui-control ui-button" type="submit" value="Add"/>
+            </form>
+        </article>
+    </section>
+
+    <footer class="footer">
+        <p>Copyright &copy; 2021, Przemysław Rośleń</p>
+    </footer>
+</div>
+</body>
+</html>

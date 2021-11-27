@@ -1,7 +1,9 @@
 import {getGatewayUrl} from "../js/config.js";
 import {deleteElementChildren, createTextCell, createLinkCell, createButtonCell} from "../js/dom_utils.js";
 
-window.addEventListener('load', () => {getAndDisplayDepartments();});
+window.addEventListener('load', () => {
+    getAndDisplayDepartments();
+});
 
 function createRowInTable(department) {
     let rowElement = document.createElement('tr');

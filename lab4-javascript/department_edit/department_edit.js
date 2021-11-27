@@ -51,4 +51,6 @@ function updateDepartment(event)
     httpRequest.setRequestHeader("Content-Type", "application/json");
 
     httpRequest.send(JSON.stringify(request));
+
+    window.location.href = '../department_list/department_list.html';
 }
